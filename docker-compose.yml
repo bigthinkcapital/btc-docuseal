@@ -3,7 +3,6 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    image: docuseal/docuseal:latest
     ports:
       - 3000:3000
     volumes:
@@ -11,9 +10,13 @@ services:
     environment:
       - FORCE_SSL=${HOST}
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/docuseal
-
+    build:
+      context: .
+      dockerfile: Dockerfile
   postgres:
-    image: postgres:15
+    ports:
+      - 5432:5432
+    image: postgres:17
     volumes:
       - './pg_data:/var/lib/postgresql/data'
     environment:
