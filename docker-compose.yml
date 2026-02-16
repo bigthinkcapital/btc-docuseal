@@ -4,7 +4,7 @@ services:
       postgres:
         condition: service_healthy
     ports:
-      - 3000:3000
+      - 3001:3001
     volumes:
       - ./docuseal:/data/docuseal
     environment:
@@ -13,6 +13,19 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    develop:
+      watch:
+        - action: sync
+          path: ./app
+          target: /app/app
+        - action: sync
+          path: ./config
+          target: /app/config
+        - action: sync
+          path: ./lib
+          target: /app/lib
+        - action: rebuild
+          path: ./Gemfile
   postgres:
     ports:
       - 5432:5432
