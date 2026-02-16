@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# Docuseal module constants
 module Docuseal
   URL_CACHE = ActiveSupport::Cache::MemoryStore.new
   PRODUCT_URL = 'https://www.docuseal.com'
