@@ -18,7 +18,7 @@ env:
   ECS_TASK_DEFINITION: ${{ secrets.ECS_TASK_DEFINITION_DEV }}
   CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
 jobs:
-  build-deploy-server:
+  build-and-deploy-docuseal:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
