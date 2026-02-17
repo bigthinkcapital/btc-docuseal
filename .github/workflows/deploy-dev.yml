@@ -16,7 +16,7 @@ env:
   ECS_SERVICE: ${{ secrets.ECS_SERVICE_DEV }}
   ECS_CLUSTER: ${{ secrets.ECS_CLUSTER_DEV }}
   ECS_TASK_DEFINITION: ${{ secrets.ECS_TASK_DEFINITION_DEV }}
-  CONTAINER_NAME: ${{ secrets.CONTAINER_NAME_DEV }}
+  CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
 jobs:
   build-deploy-server:
     runs-on: ubuntu-latest
