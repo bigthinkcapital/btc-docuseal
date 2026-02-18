@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'manifest' => 'pwa#manifest'
 
   # health check route
-  get '/health', to => proc { [200, {}, ['OK']] }
+  get '/health', to: proc { [200, {}, ['OK']] }
 
   devise_for :users, path: '/', only: %i[sessions passwords],
                      controllers: { sessions: 'sessions', passwords: 'passwords' }
