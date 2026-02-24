@@ -100,5 +100,5 @@ WORKDIR /data/docuseal
 ENV HOME=/home/docuseal
 ENV WORKDIR=/data/docuseal
 
-EXPOSE 3001
+EXPOSE 3000
 CMD ["/app/bin/bundle", "exec", "puma", "-C", "/app/config/puma.rb", "--dir", "/app"]
